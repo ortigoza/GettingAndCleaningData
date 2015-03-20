@@ -34,6 +34,17 @@ The project description's is:
 
 0. You need to download and unzip file manually. The run_analysis.R does NOT this tasks.
 1. Please make sure you have the following libraries: "data.table" and "dplyr".
-(optional) If you don't have installed, please type install.packages("data.table","dplyr") in order to get them.
+If you don't have installed, please type install.packages("data.table","dplyr") in order to get them.
+
+### III. Brief explanation
+
+In order to achieve the 5 goals, we had to do the following:
+
+0. Read the files needed to process them, here we used *read.table()* function wrapped by a *data.table()*, to create a Data Table with the file's content.
+1. Concatenate the training and the test sets by using *rbindlist()*
+2. By using regular expressions we filter only those variables who had "mean" or "std" name.
+3. To describe activities by name we merge the original dataset with the names from *activity_labels.txt*
+4. To assign appropiate labels, we only erase the parenthesis () and change std to SD.
+5. By using *dplyr* library we summarise each column grouped by subject and activity 
 
 Thank's
